@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Learn Node JS</title>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900">
+      <div class="form p-10 text-white">
+        <form action="/create" method="post">
+          <input
+            type="text"
+            placeholder="Title goes here"
+            class="block px-5 py-2 bg-zinc-800 w-full rounded-mg outline-none"
+            name="title"
+          />
+          <textarea
+            placeholder="Write your task details here"
+            class="block px-5 py-2 resize-none bg-zinc-800 mt-2 w-full rounded-mg outline-none"
+            name="details"
+          ></textarea>
+          <input
+            type="submit"
+            value="Create Task"
+            class="mt-2 px-5 py-2 rounded-mg bg-blue-600"
+          />
+        </form>
+      </div>
+      <div class="tasks p-10 flex gap-3 flex-wrap p-10">
+        <% if (files.length > 0) { %> <% files.forEach(function(val) { %>
+        <div class="task min-w-72 px-3 py-4 rounded-mg bg-zinc-800">
+          <h1 class="text-white text-3xl tracking-tighter"><%= val%></h1>
+          <div class="flex w-full justify-between items-centre">
+            <a href="/file/<%= val%>" class="text-blue-500 inline-block mt-3">
+              Read More....
+            </a>
+            <a href="/edit/<%= val%>" class="text-zinc-500 inline-block mt-3">
+              Edit file name
+            </a>
+          </div>
+        </div>
+        <% }) %> <% } else { %>
+        <h3 class="text-white text-3xl">No task added</h3>
+        <% } %>
+      </div>
+    </div>
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Learn Node JS</title>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900 p-10 text-white">
+      <a href="/" class="inline-block mb-10 text-blue-500">Go back to Home</a>
+      <form action="/edit" method="post">
+        <input
+          type="text"
+          placeholder="Previous Name"
+          class="block w-1/4 px-5 py-2 bg-zinc-800 w-full rounded-mg outline-none mb-5"
+          name="previous"
+          value="<%= filename %>"
+        />
+        <input
+          type="text"
+          placeholder="New Name"
+          class="block w-1/4 px-5 py-2 bg-zinc-800 w-full rounded-mg outline-none"
+          name="new"
+        />
+        <input
+          type="submit"
+          value="Edit File Name"
+          class="mt-2 px-5 py-2 rounded-mg bg-yellow-600"
+        />
+      </form>
+    </div>
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>
